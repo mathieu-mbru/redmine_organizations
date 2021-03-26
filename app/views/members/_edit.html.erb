@@ -21,7 +21,7 @@
   <% if Redmine::Plugin.installed?(:redmine_limited_visibility) %>
     <p style="width: <%= column_width %>%;float: left;">
       <% @functions.each do |function| %>
-        <label>
+        <label style="cursor: pointer" title="<%= function.description %>">
           <%= check_box_tag('membership[function_ids][]',
                             function.id, @member.functions.to_a.include?(function),
                             :id => nil,
